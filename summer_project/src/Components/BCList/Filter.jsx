@@ -34,16 +34,11 @@ const Filter = ({ onStatusChange, onTagChange, onFilterChange, onDateRangeChange
         },
       });
 
-      console.log('API Response:', response.data);
-
       if (response.data && Array.isArray(response.data.BTags)) {
         const tags = response.data.BTags.map(tag => ({ label: tag.BTag, value: tag.BTag }));
         setFilterByTags(tags);
-      } else {
-        console.error('Unexpected data format:', response.data);
       }
     } catch (error) {
-      console.error('Error fetching tags:', error);
     }
   };
 
@@ -82,14 +77,6 @@ const Filter = ({ onStatusChange, onTagChange, onFilterChange, onDateRangeChange
     setDateRange(update);
     onDateRangeChange(update);
   };
-
-  useEffect(() => {
-    console.log("Selected Status:", selectedStatus);
-  }, [selectedStatus]);
-
-  useEffect(() => {
-    console.log("Selected Filter:", selectedFilter);
-  }, [selectedFilter]);
 
   return (
     <div className='z-50'>

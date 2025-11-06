@@ -12,9 +12,6 @@ const BCReview = ({ recipientTitle, contentName, onDateChange, recipientEveryone
   const [bschedule, setBSchedule] = useState(new Date());
   const [sqlDate, setSqlDate] = useState("");
 
-
-  console.log(recipientEveryone);
-
   useEffect(() => {
     const toSqlDate = (date) => {
       const isoString = date.toISOString();
@@ -25,8 +22,6 @@ const BCReview = ({ recipientTitle, contentName, onDateChange, recipientEveryone
     setSqlDate(toSqlDate(bschedule));
     onDateChange(sqlDate);
   }, [bschedule,onDateChange]);
-
-  console.log(sqlDate);
 
   return (
     <div>

@@ -23,7 +23,6 @@ const Transection = () => {
             setCurrentPage(data.currentPage);
             setTotalPages(data.totalPages);
         } catch (error) {
-            console.error('Error fetching customers:', error);
             alert(`Error fetching customers: ${error.response?.data?.message || error.message}`);
         }
     };

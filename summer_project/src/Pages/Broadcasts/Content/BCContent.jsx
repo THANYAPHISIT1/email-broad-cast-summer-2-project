@@ -32,7 +32,6 @@ const BCContent = ({ setContentName, setSelectedTemplate, broadcastName, email, 
         setCurrentPage(data.currentPage);
         setTotalPages(data.totalPages);
       } catch (error) {
-        console.error("Error fetching templates:", error);
       }
     };
 

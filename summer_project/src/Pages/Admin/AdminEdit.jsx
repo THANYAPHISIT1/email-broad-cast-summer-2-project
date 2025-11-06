@@ -38,7 +38,6 @@ function AdminEdit() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('New customer added:', { name, level, email });
     setName('');
     setLevel('');
     setEmail('');
@@ -46,7 +45,6 @@ function AdminEdit() {
   };
 
   useEffect(() => {
-    console.log('Component mounted or updated');
   }, []);
   
 

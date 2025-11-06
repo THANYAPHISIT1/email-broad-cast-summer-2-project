@@ -30,13 +30,11 @@ const BCCContentDetail = () => {
           }
         );
         const templateData = response.data.template[0];
-        console.log(templateData)
         setTemplateData({
           TName: templateData.TName,
           TContent: templateData.TContent,
         });
       } catch (error) {
-        console.error("Error fetching template data:", error);
       }
     };
 
@@ -69,11 +67,9 @@ const BCCContentDetail = () => {
         }
       );
 
-      console.log("Template updated successfully!");
       alert("Template updated successfully!");
       navigate("/template");
     } catch (error) {
-      console.error("Error updating template:", error);
     }
   };
 

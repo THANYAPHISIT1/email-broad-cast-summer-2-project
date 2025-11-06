@@ -33,7 +33,6 @@ const Template = () => {
         setCurrentPage(data.currentPage);
         setTotalPages(data.totalPages);
       } catch (error) {
-        console.error("Error fetching templates:", error);
       }
     };
 
@@ -41,7 +40,6 @@ const Template = () => {
   }, [currentPage]);
 
   const handleTemplateClick = (templateId) => {
-    console.log(`Template ${templateId} clicked`);
     const selectedTemplate = templates.find(
       (template) => template.TID === templateId
     );

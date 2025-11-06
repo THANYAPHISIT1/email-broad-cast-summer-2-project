@@ -41,10 +41,8 @@ function CustomerEdit() {
         setName(customerData.CusName);
         setEmail(customerData.CusEmail);
         setLevel(customerData.CusLevel);
-        
 
       } catch (error) {
-        console.error('Error fetching customer:', error);
       }
     };
 
@@ -74,12 +72,11 @@ function CustomerEdit() {
       setTimeout(() =>{
         navigate("/customers");
       }, 2000 )
-      
+
     } catch (error) {
-      console.error('Error updating customer:', error);
     }
 
-    
+
   };
 
   const handleCancel = () => {
@@ -94,7 +91,6 @@ function CustomerEdit() {
       });
       navigate("/customers");
     } catch (error) {
-      console.error('Error deleting customer:', error);
     }
   };
 

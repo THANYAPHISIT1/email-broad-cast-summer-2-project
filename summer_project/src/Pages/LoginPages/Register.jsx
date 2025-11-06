@@ -52,8 +52,6 @@ const Register = () => {
         const result = await dispatch(registerUser({ AEmail, AUsername, APassword }));
 
         if (registerUser.fulfilled.match(result)) {
-            console.log('Registration successful');
-
             setFormData({
                 AEmail: '',
                 AUsername: '',

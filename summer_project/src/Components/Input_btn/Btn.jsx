@@ -1,9 +1,8 @@
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
 
 function Btn({ handleNext, handlePrevious, currentIndex, totalSteps, broadcastName, email, selectedLevel , selectedTID, tag, blacklist, sqlDate, fromName,recipientEveryone }) {
-  console.log(broadcastName, email, selectedLevel , selectedTID, tag,)
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
@@ -29,11 +28,9 @@ function Btn({ handleNext, handlePrevious, currentIndex, totalSteps, broadcastNa
           }
         }
       );
-      console.log('Response:', response);
       navigate('/');
 
     } catch (error) {
-      console.error('Error creating broadcast:', error);
     }
 
 

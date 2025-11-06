@@ -30,7 +30,6 @@ const Admin = () => {
         setCurrentPage(page);
         setTotalPages(data.totalPages);
       } catch (error) {
-        console.error('Error fetching admins:', error);
         setError('Failed to fetch admins');
       } finally {
         setLoading(false);

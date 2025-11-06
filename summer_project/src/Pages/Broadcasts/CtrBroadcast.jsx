@@ -88,14 +88,10 @@ const CtrBroadcast = () => {
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, components.length - 1));
-        console.log("Email:", email);
-        console.log("Blacklist:", blacklist);
     };
-    
+
     const handlePrevious = () => {
         setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
-        console.log("Email:", email);
-        console.log("Blacklist:", blacklist);
     };
 
 

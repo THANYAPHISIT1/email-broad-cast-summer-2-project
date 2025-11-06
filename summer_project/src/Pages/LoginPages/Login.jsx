@@ -57,7 +57,6 @@ const LoginForm = () => {
         const result = await dispatch(loginUser({ AUsername, APassword }));
 
         if (loginUser.fulfilled.match(result)) {
-            console.log('Login successful');
             navigate('/');
         }
     };

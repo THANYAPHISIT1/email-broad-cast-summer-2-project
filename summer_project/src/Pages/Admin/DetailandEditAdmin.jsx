@@ -24,7 +24,6 @@ function AddNewAdmin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('New Admin added:', { name, level, email, description });
     setName('');
     setLevel('');
     setEmail('');
@@ -41,7 +40,6 @@ function AddNewAdmin() {
   }
 
   useEffect(() => {
-    console.log('Component mounted or updated');
   }, []);
 
   return (

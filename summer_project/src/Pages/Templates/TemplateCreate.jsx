@@ -42,12 +42,10 @@ const TemplateCreate = () => {
         }
       });
 
-      console.log("Template Created successfully:", response.data);
       alert("Template Created successfully!");
       navigate('/template');
-      
+
     } catch (error) {
-      console.error("Error posting data:", error);
     }
   };
 
