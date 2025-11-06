@@ -1,26 +1,12 @@
 import { useState, useEffect } from "react";
 import { Popover, PopoverTrigger, Button } from "@nextui-org/react";
 import Select from "react-select";
+import { CUSTOMER_LEVELS } from '../../../constants';
 
 const BCRecipients = ({ setRecipientTitle, selectedLevel, setSelectedLevel, email ,setTag, tag , setEmail, blacklist, setBlacklist, setRecipientEveryone }) => {
   const [isMatchConOpen, setIsMatchConOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(email ? "email" : selectedLevel ? "level" : null);
   const [isEveryCustomerOpen, setIsEveryCustomerOpen] = useState(false);
-
-  const levelOptions = [
-    { value: "Silver", label: "Silver" },
-    { value: "Gold", label: "Gold" },
-    { value: "Platinum", label: "Platinum" },
-    { value: "Diamond", label: "Diamond" },
-  ];
-
-  useEffect(() => {
-    if (selectedOption === "level" && selectedLevel) {
-      console.log(`Selected option: Level: ${selectedLevel.value}`);
-    } else if (selectedOption) {
-      console.log(`Selected option: ${selectedOption}`);
-    }
-  }, [selectedOption, selectedLevel]);
 
   const handleChange = (option) => {
     setSelectedLevel(option);
@@ -60,22 +46,14 @@ const BCRecipients = ({ setRecipientTitle, selectedLevel, setSelectedLevel, emai
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    setTimeout(() => {
-      console.log("Customer Email:", e.target.value);
-    }, 3000);
   };
 
   const handleBlacklistChange = (e) => {
     setBlacklist(e.target.value);
-    setTimeout(() => {
-      console.log("Conditions blacklist:", e.target.value);
-    }, 3000);
   };
+
   const handleTag = (e) => {
     setTag(e.target.value);
-    setTimeout(() => {
-      console.log("Tag:", e.target.value);
-    }, 3000);
   };
 
   return (
@@ -137,7 +115,7 @@ const BCRecipients = ({ setRecipientTitle, selectedLevel, setSelectedLevel, emai
                 {(selectedOption === "level" || selectedLevel) && (
                   <Select
                     placeholder="Select Level"
-                    options={levelOptions}
+                    options={CUSTOMER_LEVELS}
                     value={selectedLevel}
                     onChange={handleChange}
                     className="basic-multi-select ml-2 mt-2.5 max-w-64 w-full"

@@ -1,25 +1,18 @@
 import { useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 import { API_BASE_URL } from '../../utils/api';
 import TopNav from '../../Components/Layouts/TopNav';
 import Sidebar from '../../Components/Layouts/Sidebar';
 import Select from 'react-select';
 import { useNavigate } from 'react-router-dom';
-
+import { CUSTOMER_LEVELS } from '../../constants';
 
 function AddNewCustomer() {
   const [name, setName] = useState('');
   const [level, setLevel] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState(''); 
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
-
-  const levelOptions = [
-    { value: 'Silver', label: 'Silver' },
-    { value: 'Gold', label: 'Gold' },
-    { value: 'Platinum', label: 'Platinum' },
-    { value: 'Diamond', label: 'Diamond' },
-  ];
 
   const handleChange = (selectedOption) => {
     setLevel(selectedOption.value);
@@ -44,8 +37,6 @@ function AddNewCustomer() {
           }
         }
       );
-      console.log('Response:', response);
-
       setMessage('Customer created successfully!');
 
       setName('');
@@ -57,9 +48,7 @@ function AddNewCustomer() {
       }, 2000);
 
     } catch (error) {
-      console.log(name);
-      console.error('Error creating customer:', error);
-      setMessage('Error creating customer. Please try again.'); 
+      setMessage('Error creating customer. Please try again.');
     }
   };
 
@@ -96,8 +85,8 @@ function AddNewCustomer() {
               <label className="text-black font-bold text-base" htmlFor="level">Level</label>
               <Select
                 placeholder="Select Level"
-                options={levelOptions}
-                value={levelOptions.find((option) => option.value === level)}
+                options={CUSTOMER_LEVELS}
+                value={CUSTOMER_LEVELS.find((option) => option.value === level)}
                 onChange={handleChange}
                 className="basic-multi-select mt-2.5 w-max"
               />
