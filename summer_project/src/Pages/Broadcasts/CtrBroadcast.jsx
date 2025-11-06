@@ -113,7 +113,6 @@ const CtrBroadcast = () => {
                         </div>
                         <input value={fromName} onChange={handleFromNameChange} placeholder="From Email:" className="p-1 border mx-2 rounded-md"/>
                     </div>
-                    {/* Stepper */}
                     <div className="flex items-center">
                     <ol className="flex items-center w-full space-x-4">
                         {components.map((_, index) => {

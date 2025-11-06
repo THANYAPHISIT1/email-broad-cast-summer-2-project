@@ -62,7 +62,6 @@ const adminSlice = createSlice({
 export const { setCurrentPage, clearError } = adminSlice.actions;
 export default adminSlice.reducer;
 
-// Selectors
 export const selectAdmins = (state) => state.admin.admins;
 export const selectAdminLoading = (state) => state.admin.loading;
 export const selectAdminError = (state) => state.admin.error;

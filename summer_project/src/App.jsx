@@ -17,7 +17,6 @@ import DetailAndEditAdmin from "./Pages/Admin/DetailandEditAdmin";
 import UpdateTemplate from "./Pages/Templates/TemplateEdit";
 import BCCContentDetail from "./Pages/Broadcasts/Content/BCContentDetail";
 import Transection from "./Pages/Transection/Transection";
-// import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -26,11 +25,9 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 
-        {/* Protected routes */}
         <Route
           path="*"
           element={
-            // <ProtectedRoute>
               <Routes>
                 <Route path="/" element={<Broadcast />} />
                 <Route path="DetailAndEditAdmin" element={<DetailAndEditAdmin />} />
@@ -48,7 +45,6 @@ function App() {
                 <Route path="customer/add" element={<AddNewCustomer />} />
                 <Route path="transection" element={<Transection />} />
               </Routes>
-            // </ProtectedRoute>
           }
         />
       </Routes>

@@ -18,12 +18,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        // Ignore these action types for serialization check
         ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
       },
     }),
   devTools: process.env.NODE_ENV !== 'production',
 });
-
-// Store instance is ready to be used
-// RootState and AppDispatch types would be defined here if using TypeScript

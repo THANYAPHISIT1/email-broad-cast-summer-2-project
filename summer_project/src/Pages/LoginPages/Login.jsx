@@ -17,15 +17,13 @@ const LoginForm = () => {
         APassword: ''
     });
     const [validationError, setValidationError] = useState('');
-    
-    // Redirect if already authenticated
+
     useEffect(() => {
         if (isAuthenticated) {
             navigate('/');
         }
     }, [isAuthenticated, navigate]);
-    
-    // Clear errors when component unmounts or when user starts typing
+
     useEffect(() => {
         return () => {
             dispatch(clearError());
@@ -34,7 +32,6 @@ const LoginForm = () => {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
-        // Clear validation errors when user starts typing
         if (validationError) setValidationError('');
         if (error) dispatch(clearError());
     };
@@ -43,30 +40,26 @@ const LoginForm = () => {
         e.preventDefault();
         const { AUsername, APassword } = formData;
 
-        // Client-side validation
         const usernameValidation = validateUsername(AUsername);
         if (usernameValidation !== true) {
             setValidationError(usernameValidation);
             return;
         }
-    
+
         const passwordValidation = validatePassword(APassword);
         if (passwordValidation !== true) {
             setValidationError(passwordValidation);
             return;
         }
 
-        // Clear validation errors
         setValidationError('');
-        
-        // Dispatch login action
+
         const result = await dispatch(loginUser({ AUsername, APassword }));
-        
+
         if (loginUser.fulfilled.match(result)) {
             console.log('Login successful');
             navigate('/');
         }
-        // Error handling is done through Redux state
     };
 
     return (

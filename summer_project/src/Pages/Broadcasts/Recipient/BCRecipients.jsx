@@ -80,7 +80,6 @@ const BCRecipients = ({ setRecipientTitle, selectedLevel, setSelectedLevel, emai
 
   return (
     <div>
-      {/* Content */}
       <div className="mx-4 my-4">
         <div className="container mx-auto p-4 border border-gray-300 rounded-md">
           <h1 className="font-medium">Who should receive this newsletter?</h1>
@@ -137,7 +136,6 @@ const BCRecipients = ({ setRecipientTitle, selectedLevel, setSelectedLevel, emai
                 )}
                 {(selectedOption === "level" || selectedLevel) && (
                   <Select
-                    // isMulti
                     placeholder="Select Level"
                     options={levelOptions}
                     value={selectedLevel}

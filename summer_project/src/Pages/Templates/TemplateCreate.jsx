@@ -29,7 +29,6 @@ const TemplateCreate = () => {
 
     try {
 
-      // forbidden then complete
       const authToken = localStorage.getItem('token')
       
       const postData = {
