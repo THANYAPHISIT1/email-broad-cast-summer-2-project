@@ -73,7 +73,7 @@ const LoginForm = () => {
                                 <i className="fas fa-heart" aria-hidden="true"></i>
                             </div>
                             <input
-                                type="username"
+                                type="text"
                                 name="AUsername"
                                 value={formData.AUsername}
                                 onChange={handleChange}

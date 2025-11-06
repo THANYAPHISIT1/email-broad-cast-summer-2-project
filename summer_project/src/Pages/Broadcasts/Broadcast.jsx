@@ -85,7 +85,7 @@ const Broadcast = () => {
                         <div className="text-xl p-8 font-bold">Broadcast</div>
                         <Link to='/create-broadcast' className='mt-4'>
                             <Button color="primary" variant="ghost" className="mr-4">
-                                Add new customer
+                                Add new broadcast
                             </Button>
                         </Link>
                     </header>

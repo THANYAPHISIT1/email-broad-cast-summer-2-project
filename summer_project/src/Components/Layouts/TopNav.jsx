@@ -1,26 +1,22 @@
-import {FaBell,FaUserCircle} from 'react-icons/fa'
-import { Link,useLocation,useNavigate } from 'react-router-dom';
+import { FaBell, FaUserCircle } from 'react-icons/fa';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const TopNav = () => {
-
-    const handlelogout = () =>{
-        
-        localStorage.removeItem('token');
-        navigate('/login')
-    }
-
     const navigate = useNavigate();
-
     const location = useLocation();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+    };
 
     const getPageName = () => {
         const path = location.pathname;
         if (path === "/") {
             return "Broadcast";
-        } else {
-            const parts = path.split('/');
-            return parts[parts.length - 1];
         }
+        const parts = path.split('/');
+        return parts[parts.length - 1];
     };
 
 
@@ -40,7 +36,7 @@ const TopNav = () => {
                             <ul className='py-2 text-sm text-gray-950'>
                                 <li><Link to=''>Profile</Link></li>
                                 <li><Link to=''>Setting</Link></li>
-                                <li onClick={handlelogout}>Log out</li>
+                                <li onClick={handleLogout}>Log out</li>
                             </ul>
                         </div>
                     </button>
