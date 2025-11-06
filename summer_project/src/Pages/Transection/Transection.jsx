@@ -56,7 +56,6 @@ const Transection = () => {
                                         <th className="px-6 py-3 text-center">Level</th>
                                         <th className="px-6 py-3 text-center">Template</th>
                                         <th className="px-6 py-3 text-center">Processed At</th>
-                                        {/* <th className="px-6 py-3 text-right">Processed At</th> */}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -68,7 +67,6 @@ const Transection = () => {
                                                 <td className="px-6 py-4 ">{act.CusLevel}</td>
                                                 <td className="px-6 py-4 ">{act.TName}</td>
                                                 <td className="px-6 py-4 ">{act.BCDatetime}</td>
-                                                {/* <td className="px-6 py-4 text-right">{act.ProcessedAt}</td> */}
                                             </tr>
                                         ))
                                     ) : (

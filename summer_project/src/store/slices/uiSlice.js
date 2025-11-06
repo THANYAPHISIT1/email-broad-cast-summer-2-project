@@ -20,7 +20,6 @@ const uiSlice = createSlice({
       state.globalLoading = action.payload;
     },
 
-    // Notification actions
     addNotification: (state, action) => {
       const notification = {
         id: Date.now(),

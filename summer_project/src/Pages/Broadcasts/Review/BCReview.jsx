@@ -30,7 +30,6 @@ const BCReview = ({ recipientTitle, contentName, onDateChange, recipientEveryone
 
   return (
     <div>
-      {/* Content */}
       <div className="mx-4 my-4">
         <div className="container mx-auto p-4 border border-gray-300 rounded-md">
           <div>

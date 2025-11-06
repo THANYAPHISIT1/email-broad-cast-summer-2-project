@@ -82,7 +82,6 @@ const BCCContentDetail = () => {
       <Sidebar />
       <TopNav />
       <div className="mt-16">
-        {/* Pass data to Navbar and Editor */}
           <NavbarTemplate defaultName={templateData.TName} onDataChange={handleNavbarDataChange} onPost={updateTemplate} />
           <Editor defaultContent={templateData.TContent} onDataChange={handleEditorDataChange} />
       </div>

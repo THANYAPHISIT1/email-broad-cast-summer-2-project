@@ -84,7 +84,6 @@ const Broadcast = () => {
                     <header className='flex justify-between static items-center text-center'>
                         <div className="text-xl p-8 font-bold">Broadcast</div>
                         <Link to='/create-broadcast' className='mt-4'>
-                            {/* <Createbtn className='mr-4 border mt-8 h-10 items-center w-40 p-2 rounded-md text-blue-600 hover:bg-blue-500 hover:text-white' /> */}
                             <Button color="primary" variant="ghost" className="mr-4">
                                 Add new customer
                             </Button>

@@ -60,7 +60,6 @@ UserIcon.propTypes = {
   label: PropTypes.string,
 };
 
-// Default props
 UserIcon.defaultProps = {
   fill: 'currentColor',
   size: 24,

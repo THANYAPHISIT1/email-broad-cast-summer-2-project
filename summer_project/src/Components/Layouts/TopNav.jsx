@@ -13,14 +13,11 @@ const TopNav = () => {
 
     const location = useLocation();
 
-    // Function to get the page name from the path
     const getPageName = () => {
         const path = location.pathname;
-        // If the path is just "/", return "Broadcast"
         if (path === "/") {
             return "Broadcast";
         } else {
-            // Split the path and get the last part (page name)
             const parts = path.split('/');
             return parts[parts.length - 1];
         }

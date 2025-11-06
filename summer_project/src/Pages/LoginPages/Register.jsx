@@ -22,7 +22,6 @@ const Register = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-        // Clear errors when user starts typing
         if (validationError) setValidationError('');
         if (error) dispatch(clearError());
     };
@@ -31,7 +30,6 @@ const Register = () => {
         e.preventDefault();
         const { AEmail, AUsername, APassword } = formData;
 
-        // Client-side validation
         if (!validateEmail(AEmail)) {
             setValidationError('Please enter a valid email address');
             return;
@@ -42,33 +40,28 @@ const Register = () => {
             setValidationError(usernameValidation);
             return;
         }
-    
+
         const passwordValidation = validatePassword(APassword);
         if (passwordValidation !== true) {
             setValidationError(passwordValidation);
             return;
         }
 
-        // Clear validation errors
         setValidationError('');
 
-        // Dispatch register action
         const result = await dispatch(registerUser({ AEmail, AUsername, APassword }));
-        
+
         if (registerUser.fulfilled.match(result)) {
             console.log('Registration successful');
-            
-            // Reset form after successful registration
+
             setFormData({
                 AEmail: '',
                 AUsername: '',
                 APassword: ''
             });
 
-            // Redirect to login page
             navigate('/login');
         }
-        // Error handling is done through Redux state
     };
 
     return (
